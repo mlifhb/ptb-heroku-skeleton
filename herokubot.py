@@ -5,7 +5,14 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 
 def start(update, context):
-    update.effective_message.reply_text("Hi!")
+    context.bot.send_message(chat_id=update.effective_chat.id, text="در حال ارسال پیام هستید:")
+
+    user = update.effective_chat.id in users
+    if not user:
+      users.append(update.effective_chat.id)
+      user_active_button.append(0)
+    if user_active_button[users.index(update.effective_chat.id)] != -1:
+      user_active_button[users.index(update.effective_chat.id)]=1
 
 
 def echo(update, context):
@@ -13,9 +20,12 @@ def echo(update, context):
 
 
 if __name__ == "__main__":
-    # Set these variable to the appropriate values
-    TOKEN = "Your token from @Botfather"
-    NAME = "The name of your app on Heroku"
+    users=[]
+    group = ['-1001697966543']
+    user_active_button = []
+    admins = [-1001697966543]
+    TOKEN = "5087750187:AAF3PIit5UxuPa5AZNL1QwHJ6Jm-N0d9skI"
+    NAME = "tbhh21" 
 
     # Port is given by Heroku
     PORT = os.environ.get('PORT')
