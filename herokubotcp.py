@@ -48,8 +48,8 @@ class BotComm:
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
-    TOKEN = "Your token from @Botfather"
-    NAME = "The name of your app on Heroku"
+    TOKEN = "5087750187:AAF3PIit5UxuPa5AZNL1QwHJ6Jm-N0d9skI"
+    NAME = "tbhh21"
 
     # Port is given by Heroku
     PORT = os.environ.get('PORT')
